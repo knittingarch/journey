@@ -1,7 +1,7 @@
 class CreateProfiles < ActiveRecord::Migration[6.0]
   def change
     create_table :profiles do |t|
-      t.string :name
+      t.string :name, null: false
       t.string :hair_state
       t.date :big_chop_date
       t.string :hair_type

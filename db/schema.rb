@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_28_043627) do
+ActiveRecord::Schema.define(version: 2020_06_28_052138) do
+
+  create_table "products", force: :cascade do |t|
+    t.string "category"
+    t.text "name", null: false
+    t.text "notes"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "hair_state"
     t.date "big_chop_date"
     t.string "hair_type"
