@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_28_052138) do
+ActiveRecord::Schema.define(version: 2020_06_28_054123) do
 
   create_table "products", force: :cascade do |t|
-    t.string "category"
+    t.string "category", null: false
     t.text "name", null: false
     t.text "notes"
+    t.text "product_image_url"
     t.integer "rating"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "profile_id"
+    t.index ["profile_id"], name: "index_products_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -32,6 +33,8 @@ ActiveRecord::Schema.define(version: 2020_06_28_052138) do
     t.text "profile_img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "product_id"
+    t.index ["product_id"], name: "index_profiles_on_product_id"
   end
 
 end
