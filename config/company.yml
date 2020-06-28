@@ -1,0 +1,20 @@
+default: &default
+  AN:
+    name: "Alikay Naturals"
+  AIA:
+    name: "As I Am"
+
+  MC:
+    name: "The Mane Choice"
+
+  TGIN:
+    name: "TGIN"
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
