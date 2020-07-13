@@ -4,7 +4,7 @@ class Company < ApplicationRecord
 
   has_many :products
 
-  def self.all
+  def self.all_companies
     Rails.application.config_for(:company)
   end
 end

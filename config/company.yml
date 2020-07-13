@@ -1,6 +1,7 @@
 default: &default
   AN:
     name: "Alikay Naturals"
+
   AIA:
     name: "As I Am"
 
